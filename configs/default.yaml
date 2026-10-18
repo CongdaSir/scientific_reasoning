@@ -1,0 +1,30 @@
+model:
+  base_url: http://localhost:8000/v1
+  name: Qwen/Qwen3-8B
+  api_key_env: VLLM_API_KEY
+  timeout: 300
+  max_tokens: 8192
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20
+  enable_thinking: true
+
+search:
+  endpoint: https://api.deepseek.com/v1/tools/search
+  api_key_env: DEEPSEEK_API_KEY
+  timeout: 60
+  count: 5
+  need_content: false
+  max_result_chars: 3000
+
+code:
+  timeout: 30
+  max_output_chars: 12000
+
+reasoning:
+  max_rounds: 20
+
+dataset:
+  question_field: question
+  id_field: id
+  concurrency: 4

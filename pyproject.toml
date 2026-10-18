@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scientific-reasoning"
+version = "0.1.0"
+description = "Qwen3 scientific reasoning with vLLM, DeepSeek Search and Python tools"
+requires-python = ">=3.10"
+dependencies = ["httpx>=0.27,<1", "PyYAML>=6,<7", "python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+science = ["numpy", "scipy", "sympy"]
+
+[project.scripts]
+scientific-reasoning = "src.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["src", "src.*"]
