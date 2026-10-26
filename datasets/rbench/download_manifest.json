@@ -1,0 +1,47 @@
+{
+  "name": "R-Bench",
+  "source": "https://huggingface.co/datasets/R-Bench/R-Bench",
+  "revision": "c0e92a6d90dad980ea51a47af64c12ec67b670ce",
+  "downloaded_at_utc": "2026-10-25T00:52:40.474701+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/datasets/R-Bench/R-Bench/resolve/c0e92a6d90dad980ea51a47af64c12ec67b670ce/README.md?download=true",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 7006,
+      "sha256": "19a529be6a5bba6766d797e9262398c67d45040da34d9b379d7241bc2a6241d6"
+    },
+    {
+      "path": "rbench-m_en/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/R-Bench/R-Bench/resolve/c0e92a6d90dad980ea51a47af64c12ec67b670ce/rbench-m_en/test-00000-of-00001.parquet?download=true",
+      "verification": "upstream_lfs_sha256",
+      "bytes": 53105849,
+      "sha256": "0b4ddc114d012c5791963806d5c4cfa28cd7365b1027b5ecb190f759733db912",
+      "parquet_magic_verified": true
+    },
+    {
+      "path": "rbench-m_zh/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/R-Bench/R-Bench/resolve/c0e92a6d90dad980ea51a47af64c12ec67b670ce/rbench-m_zh/test-00000-of-00001.parquet?download=true",
+      "verification": "upstream_lfs_sha256",
+      "bytes": 51317105,
+      "sha256": "2922b486355add8287139659ac25f6ca2d93b324873d80ebcbd3db74a9ade6c5",
+      "parquet_magic_verified": true
+    },
+    {
+      "path": "rbench-t_en/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/R-Bench/R-Bench/resolve/c0e92a6d90dad980ea51a47af64c12ec67b670ce/rbench-t_en/test-00000-of-00001.parquet?download=true",
+      "verification": "upstream_lfs_sha256",
+      "bytes": 369218,
+      "sha256": "96aaeeecdb5b74ec28979256b9238413470969e37929530336b597882729c970",
+      "parquet_magic_verified": true
+    },
+    {
+      "path": "rbench-t_zh/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/R-Bench/R-Bench/resolve/c0e92a6d90dad980ea51a47af64c12ec67b670ce/rbench-t_zh/test-00000-of-00001.parquet?download=true",
+      "verification": "upstream_lfs_sha256",
+      "bytes": 358002,
+      "sha256": "3401aa69265d99922bdcb5f274c2eaf186397772f827e7b4b572534032c20c0c",
+      "parquet_magic_verified": true
+    }
+  ]
+}

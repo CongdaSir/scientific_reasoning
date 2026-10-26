@@ -1,0 +1,53 @@
+{
+  "prepared_date_local": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "datasets": [
+    {
+      "name": "GPQA-Diamond",
+      "directory": "gpqa",
+      "source": "https://github.com/idavidrein/gpqa",
+      "revision": "56686c06f5e19865c153de0fdb11be3890014df7",
+      "verified_files": 2,
+      "bytes": 3721530,
+      "manifest": "gpqa/download_manifest.json"
+    },
+    {
+      "name": "SuperGPQA",
+      "directory": "supergpqa",
+      "source": "https://huggingface.co/datasets/m-a-p/SuperGPQA",
+      "revision": "4430d4458112c7d4497fdcf94d7cc223313d6acf",
+      "verified_files": 2,
+      "bytes": 23961566,
+      "manifest": "supergpqa/download_manifest.json"
+    },
+    {
+      "name": "R-Bench",
+      "directory": "rbench",
+      "source": "https://huggingface.co/datasets/R-Bench/R-Bench",
+      "revision": "c0e92a6d90dad980ea51a47af64c12ec67b670ce",
+      "verified_files": 5,
+      "bytes": 105157180,
+      "manifest": "rbench/download_manifest.json"
+    },
+    {
+      "name": "SciEval",
+      "directory": "scieval",
+      "source": "https://github.com/OpenDFM/SciEval",
+      "revision": "aa61a9dfe75f55145492517fac0b7f05220b0d72",
+      "verified_files": 7,
+      "bytes": 31275367,
+      "manifest": "scieval/download_manifest.json"
+    },
+    {
+      "name": "SciBench",
+      "directory": "scibench",
+      "source": "https://github.com/mandyyyyii/scibench",
+      "revision": "e14e0ca3d3db0f02928a18d435b9c3d15656a7c5",
+      "verified_files": 475,
+      "bytes": 6437701,
+      "manifest": "scibench/download_manifest.json"
+    }
+  ],
+  "total_verified_files": 491,
+  "total_bytes": 170553344
+}

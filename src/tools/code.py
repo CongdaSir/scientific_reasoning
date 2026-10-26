@@ -1,11 +1,37 @@
-import asyncio
-import os
-import signal
-import sys
-import tempfile
 from pathlib import Path
 
 from ..config import CodeConfig
+from .dependencies import DependencyError, DependencyManager
+from .python_process import run_python
+
+
+_PYTHON_RUNNER = """
+import ast
+import __future__
+import sys
+from types import ModuleType
+
+source = sys.argv[1]
+sys.argv = ["-c"]
+tree = ast.parse(source, filename="<string>", mode="exec")
+# Validate the whole program before running any statements.
+compiled = compile(tree, "<string>", "exec", dont_inherit=True)
+future_flags = compiled.co_flags & sum(
+    getattr(__future__, name).compiler_flag for name in __future__.all_feature_names
+)
+original_main = sys.modules["__main__"]
+module = ModuleType("__main__")
+sys.modules["__main__"] = module
+namespace = module.__dict__
+if tree.body and isinstance(tree.body[-1], ast.Expr):
+    expression = tree.body.pop()
+    exec(compile(tree, "<string>", "exec", flags=future_flags, dont_inherit=True), namespace)
+    value = eval(compile(ast.Expression(expression.value), "<string>", "eval",
+                         flags=future_flags, dont_inherit=True), namespace)
+    sys.displayhook(value)
+else:
+    exec(compiled, namespace)
+"""
 
 
 class CodeTool:
@@ -14,44 +40,13 @@ class CodeTool:
     def __init__(self, config: CodeConfig, workdir: str | Path):
         self.config = config
         self.workdir = str(workdir)
+        self.dependencies = DependencyManager(config, workdir)
 
     async def __call__(self, code: str) -> dict:
-        cfg = self.config
-        # Disk-backed streams avoid retaining unbounded child output in RAM.
-        with tempfile.TemporaryFile() as stdout, tempfile.TemporaryFile() as stderr:
-            process = await asyncio.create_subprocess_exec(
-                sys.executable, "-I", "-u", "-c", code,
-                cwd=self.workdir,
-                env={"PATH": os.defpath, "HOME": self.workdir, "LANG": "C.UTF-8"},
-                stdin=asyncio.subprocess.DEVNULL,
-                stdout=stdout,
-                stderr=stderr,
-                start_new_session=True,
-            )
-            timed_out = False
-            try:
-                await asyncio.wait_for(process.wait(), timeout=cfg.timeout)
-            except asyncio.TimeoutError:
-                timed_out = True
-            finally:
-                # Also clean up child processes spawned by the generated program.
-                try:
-                    os.killpg(process.pid, signal.SIGKILL)
-                except ProcessLookupError:
-                    pass
-                await process.wait()
-
-            def read_output(stream):
-                stream.seek(0)
-                text = stream.read(cfg.max_output_chars * 4 + 1).decode("utf-8", errors="replace")
-                return text[:cfg.max_output_chars], len(text) > cfg.max_output_chars
-
-            out, out_cut = read_output(stdout)
-            err, err_cut = read_output(stderr)
-        return {
-            "stdout": out,
-            "stderr": err,
-            "returncode": process.returncode,
-            "timed_out": timed_out,
-            "truncated": out_cut or err_cut,
-        }
+        try:
+            installation_output = await self.dependencies.prepare(code)
+        except DependencyError as exc:
+            return exc.result
+        result = await run_python(["-c", _PYTHON_RUNNER, code], self.workdir, self.config.timeout)
+        result["stderr"] = installation_output + result["stderr"]
+        return result

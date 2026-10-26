@@ -1,0 +1,90 @@
+{
+  "count": 152,
+  "tools": {
+    "search_calls": {
+      "total": 902,
+      "questions_using": 87,
+      "question_coverage_percent": 57.24,
+      "mean_all_questions": 5.9342,
+      "mean_using_questions": 10.3678,
+      "median_all_questions": 1.0,
+      "median_using_questions": 5,
+      "p90_all_questions": 16.700000000000017,
+      "p95_all_questions": 29.899999999999977,
+      "max": 59,
+      "max_indices": [
+        17
+      ],
+      "call_count_distribution": {
+        "0": 65,
+        "1": 15,
+        "2": 14,
+        "3": 7,
+        "4": 4,
+        "5": 7,
+        "6": 1,
+        "7": 2,
+        "8": 3,
+        "9": 2,
+        "10": 6,
+        "11": 2,
+        "12": 3,
+        "13": 2,
+        "14": 3,
+        "17": 1,
+        "18": 1,
+        "19": 1,
+        "20": 1,
+        "25": 2,
+        "26": 1,
+        "29": 1,
+        "31": 1,
+        "33": 1,
+        "40": 1,
+        "43": 1,
+        "44": 1,
+        "53": 1,
+        "57": 1,
+        "59": 1
+      },
+      "top10_questions_call_share_percent": 46.01,
+      "share_of_tool_calls_percent": 93.86
+    },
+    "code_calls": {
+      "total": 59,
+      "questions_using": 23,
+      "question_coverage_percent": 15.13,
+      "mean_all_questions": 0.3882,
+      "mean_using_questions": 2.5652,
+      "median_all_questions": 0.0,
+      "median_using_questions": 1,
+      "p90_all_questions": 1.0,
+      "p95_all_questions": 2.0,
+      "max": 11,
+      "max_indices": [
+        75,
+        123
+      ],
+      "call_count_distribution": {
+        "0": 129,
+        "1": 13,
+        "2": 5,
+        "3": 1,
+        "5": 1,
+        "6": 1,
+        "11": 2
+      },
+      "top10_questions_call_share_percent": 77.97,
+      "share_of_tool_calls_percent": 6.14
+    }
+  },
+  "patterns": {
+    "both": 18,
+    "search_only": 69,
+    "none": 60,
+    "code_only": 5
+  },
+  "total_tool_calls": 961,
+  "mean_tools_per_question": 6.322368421052632,
+  "median_tools_per_question": 1.0
+}

@@ -1,0 +1,65 @@
+{
+  "audited_at": "2026-10-25T02:20:39.543330+00:00",
+  "run_directory": "/storage/users/congdaxiao/scientific_reasoning/outputs/supergpqa-deepseek-from0-20261025-093955",
+  "criterion": "保存搜索结果明确提供同题或基本相同原题的答案或现成解答，且后续模型使用相应内容并匹配本地参考标签；只看到原题选项、模型自称找到答案或一般知识不计入。",
+  "index_base": 0,
+  "terminal_samples": 152,
+  "official_correct": 115,
+  "search_assisted_official_correct": 61,
+  "confirmed_direct_answer_or_solution": 20,
+  "confirmed_share_of_official_correct_percent": 17.39,
+  "confirmed_source_kind_counts": {
+    "dataset_or_benchmark": 8,
+    "exam_or_qa_website": 12
+  },
+  "category_counts": {
+    "direct_answer_or_solution": 20,
+    "reference_only_or_no_direct_key": 30,
+    "original_or_partial_but_unverified_answer": 7,
+    "original_multiple_answers": 4
+  },
+  "confirmed_indices": [
+    0,
+    1,
+    4,
+    5,
+    11,
+    19,
+    20,
+    31,
+    40,
+    41,
+    50,
+    58,
+    71,
+    81,
+    83,
+    88,
+    96,
+    105,
+    126,
+    143
+  ],
+  "original_multiple_answer_indices": [
+    69,
+    104,
+    116,
+    149
+  ],
+  "insufficient_evidence_indices": [
+    26,
+    57,
+    90,
+    92,
+    117,
+    127,
+    144
+  ],
+  "limitations": [
+    "基于已保存的搜索结果与模型思考进行来源核对；未重新访问网页。",
+    "无法仅凭轨迹建立“没有搜索就一定答错”的因果结论。",
+    "正确指匹配本地参考标签，不等于已经独立复核题目真值。",
+    "20 为保守可确认数量；证据不充分的 7 题未纳入。",
+    "原报告的 21 是数据集链接命中数，不是直接查到答案数；92 条候选过滤也未排除普通考试题库答案，需要结合本核对清单复审。"
+  ]
+}

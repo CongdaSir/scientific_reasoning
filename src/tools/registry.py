@@ -13,7 +13,6 @@ TOOL_SCHEMAS = [
                 "type": "object",
                 "properties": {
                     "query": {"type": "string", "minLength": 1, "maxLength": 128},
-                    "count": {"type": "integer", "minimum": 1, "maximum": 50},
                 },
                 "required": ["query"],
                 "additionalProperties": False,
@@ -26,7 +25,9 @@ TOOL_SCHEMAS = [
             "name": "code",
             "description": (
                 "Run Python for calculations, simulations or symbolic reasoning. "
-                "Use print() to return results. Each call starts a fresh interpreter; "
+                "Missing packages in explicit imports are installed automatically before execution. "
+                "The last top-level expression is displayed automatically unless its value is None. "
+                "Use print() for additional output. Each call starts a fresh interpreter; "
                 "files persist only within this question."
             ),
             "parameters": {

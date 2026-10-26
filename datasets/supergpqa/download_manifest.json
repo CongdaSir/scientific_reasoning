@@ -1,0 +1,35 @@
+{
+  "name": "SuperGPQA",
+  "source": "https://huggingface.co/datasets/m-a-p/SuperGPQA",
+  "revision": "4430d4458112c7d4497fdcf94d7cc223313d6acf",
+  "downloaded_at_utc": "2026-10-25T00:52:40.474701+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA/resolve/4430d4458112c7d4497fdcf94d7cc223313d6acf/README.md?download=true",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 4442,
+      "sha256": "0d670692d5f36a066d67c10741d160a5fcf0c2cb97f22c8dc8f453ac930b083a"
+    },
+    {
+      "path": "SuperGPQA-all.jsonl",
+      "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA/resolve/4430d4458112c7d4497fdcf94d7cc223313d6acf/SuperGPQA-all.jsonl?download=true",
+      "verification": "upstream_lfs_sha256",
+      "bytes": 23957124,
+      "sha256": "28b998e70205ee95e540317b5adc06a06552a3961fb50b153df126b833f7a910",
+      "records": 26529,
+      "fields": [
+        "uuid",
+        "question",
+        "options",
+        "answer",
+        "answer_letter",
+        "discipline",
+        "field",
+        "subfield",
+        "difficulty",
+        "is_calculation"
+      ]
+    }
+  ]
+}

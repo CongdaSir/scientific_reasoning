@@ -1,0 +1,31 @@
+model:
+  provider: deepseek
+  base_url: https://api.deepseek.com/v1
+  name: deepseek-flash
+  api_key_env: DEEPSEEK_API_KEY
+  timeout: 300
+  # DeepSeek currently supports at most 384K generated tokens per response.
+  max_tokens: 393216
+  temperature: 0.6
+  top_p: 0.95
+  enable_thinking: true
+  reasoning_effort: high
+
+search:
+  endpoint: https://api.deepseek.com/v1/tools/search
+  api_key_env: DEEPSEEK_API_KEY
+  timeout: 60
+  need_content: false
+
+code:
+  timeout: 30
+  auto_install: true
+  install_timeout: 300
+
+reasoning:
+  max_rounds: 20
+
+dataset:
+  question_field: question
+  id_field: id
+  concurrency: 4

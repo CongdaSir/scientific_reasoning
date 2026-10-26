@@ -1,0 +1,71 @@
+{
+  "name": "SciEval",
+  "source": "https://github.com/OpenDFM/SciEval",
+  "revision": "aa61a9dfe75f55145492517fac0b7f05220b0d72",
+  "downloaded_at_utc": "2026-10-25T00:52:40.474701+00:00",
+  "archive_url": "https://codeload.github.com/OpenDFM/SciEval/zip/aa61a9dfe75f55145492517fac0b7f05220b0d72",
+  "archive_sha256": "9c907ba43ef68d0388b42ed774ec4c584706d78cfd4ec8bd31b2f4ea8fdb66ab",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/README.md",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 2403,
+      "sha256": "f1f2a29202e8cbba9d947722fe29ce7302572aee217beb16fa5c62b55287cd0b"
+    },
+    {
+      "path": "dynamic_chem.json",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/dynamic_chem.json",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 784575,
+      "sha256": "c23cb173e131de6a504e34dc9a0c4008db0c3d700babbc600a46ad24fea0807b",
+      "json_type": "list",
+      "records": 2000
+    },
+    {
+      "path": "dynamic_phy.json",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/dynamic_phy.json",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 956254,
+      "sha256": "f7f906d09dbd7baf9b8f13a66ec3344de102d1996601b7d67ef0cb93d25ca18d",
+      "json_type": "list",
+      "records": 890
+    },
+    {
+      "path": "scieval-dev.json",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/scieval-dev.json",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 86112,
+      "sha256": "892149fe40199bf20e4bc4966f1ad449bb9f0ffa4db4844c35ca6e3d3c3d9dc4",
+      "json_type": "list",
+      "records": 70
+    },
+    {
+      "path": "scieval-test-local.json",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/scieval-test-local.json",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 13823536,
+      "sha256": "839d50858c2089a21df28d2dfaea293d1efe5f63eee0242222e21f55f4c792d1",
+      "json_type": "list",
+      "records": 13011
+    },
+    {
+      "path": "scieval-test.json",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/scieval-test.json",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 14035862,
+      "sha256": "9e00e77464582026a7e9800bc9a566e619c7ba9fb1510b942ee6c9d1336a3f94",
+      "json_type": "list",
+      "records": 13011
+    },
+    {
+      "path": "scieval-valid.json",
+      "url": "https://raw.githubusercontent.com/OpenDFM/SciEval/aa61a9dfe75f55145492517fac0b7f05220b0d72/scieval-valid.json",
+      "verification": "upstream_git_blob_sha1",
+      "bytes": 1586625,
+      "sha256": "e603158df1bd4fc9092f9788be012e0c015368599fea21b41b455988dd54522d",
+      "json_type": "list",
+      "records": 1441
+    }
+  ]
+}

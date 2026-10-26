@@ -6,15 +6,28 @@ import yaml
 
 @dataclass
 class ModelConfig:
-    base_url: str = "http://localhost:8000/v1"
-    name: str = "Qwen/Qwen3-8B"
-    api_key_env: str = "VLLM_API_KEY"
+    base_url: str | None = None
+    name: str | None = None
+    api_key_env: str | None = None
     timeout: float = 300
-    max_tokens: int = 8192
+    max_tokens: int | None = None
     temperature: float = 0.6
     top_p: float = 0.95
     top_k: int = 20
     enable_thinking: bool = True
+    provider: str = "vllm"
+    reasoning_effort: str | None = None
+
+    def __post_init__(self):
+        defaults = {
+            "vllm": ("http://localhost:8000/v1", "Qwen/Qwen3-8B", "VLLM_API_KEY", 8192),
+            "deepseek": ("https://api.deepseek.com/v1", "deepseek-flash", "DEEPSEEK_API_KEY", 393216),
+        }
+        if self.provider not in defaults:
+            raise ValueError(f"Unknown model.provider: {self.provider!r}; expected 'vllm' or 'deepseek'")
+        for field_name, default in zip(("base_url", "name", "api_key_env", "max_tokens"), defaults[self.provider]):
+            if getattr(self, field_name) is None:
+                setattr(self, field_name, default)
 
 
 @dataclass
@@ -22,15 +35,19 @@ class SearchConfig:
     endpoint: str = "https://api.deepseek.com/v1/tools/search"
     api_key_env: str = "DEEPSEEK_API_KEY"
     timeout: float = 60
-    count: int = 5
     need_content: bool = False
-    max_result_chars: int = 3000
+    # Accepted for older config files; summaries are always returned in full.
+    max_result_chars: int | None = None
 
 
 @dataclass
 class CodeConfig:
     timeout: float = 30
-    max_output_chars: int = 12000
+    auto_install: bool = True
+    install_timeout: float = 300
+    package_map: dict[str, str] = field(default_factory=dict)
+    # Accepted for older config files; both output streams are returned in full.
+    max_output_chars: int | None = None
 
 
 @dataclass
