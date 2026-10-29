@@ -1,5 +1,7 @@
 # Scientific Reasoning
 
+不带工具的 Qwen3-4B 评测见 [no_tools_eval/README.md](no_tools_eval/README.md)。支持已下载的 GPQA-Diamond、R-Bench 文本集、SciEval 和 SciBench 文本集，每个数据集最多前 500 题，通过 `nohup` 启动，保留逐题流式思考、答案、评分和断点。
+
 支持通过 vLLM 调用本地部署的 Qwen3，或通过 DeepSeek API 调用远程模型，在科学推理题上循环调用 `search` 和 `code`，直到最终回答包含完整的 `\boxed{...}`。两种方式共用工具定义、调用参数解析、推理循环和结果格式。客户端只依赖 HTTP，不需要安装 vLLM 或模型权重；vLLM 服务可以运行在另一台机器。
 
 ## 安装
