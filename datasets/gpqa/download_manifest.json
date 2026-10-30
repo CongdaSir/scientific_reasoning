@@ -1,0 +1,23 @@
+{
+  "name": "GPQA-Diamond",
+  "source": "https://github.com/idavidrein/gpqa",
+  "revision": "56686c06f5e19865c153de0fdb11be3890014df7",
+  "verified_at_utc": "2026-10-25T00:52:40.474701+00:00",
+  "reused_existing_data": true,
+  "files": [
+    {
+      "path": "gpqa_diamond.csv",
+      "records": 198,
+      "bytes": 1373492,
+      "sha256": "41d1213cd7a4998605a26c2798500652572007161b3a92817ba46b35befcd305",
+      "verification": "existing_source_sha256_and_official_archive_member_crc32"
+    },
+    {
+      "path": "dataset.zip",
+      "bytes": 2348038,
+      "sha256": "461ae7329f15a3e35f8184d2dac24b990f34fdf12f366ca4062d8e6638cd08dc",
+      "verification": "byte_identical_to_official_pinned_archive",
+      "url": "https://raw.githubusercontent.com/idavidrein/gpqa/56686c06f5e19865c153de0fdb11be3890014df7/dataset.zip"
+    }
+  ]
+}
